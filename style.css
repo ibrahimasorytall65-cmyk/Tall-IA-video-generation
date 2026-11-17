@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tall IA Video Generation — studio de génération de vidéos IA" />
+    <title>Tall IA Video Generation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="container nav">
+          <div class="brand-wrap">
+            <div class="brand-mark">
+              <i class="fa-solid fa-wand-sparkles"></i>
+            </div>
+            <div>
+              <div class="brand-name">Tall <span>IA</span></div>
+              <div class="brand-tag">Video Generation</div>
+            </div>
+          </div>
+
+          <nav class="nav-links">
+            <a href="#studio">Studio</a>
+            <a href="#features">Fonctionnalités</a>
+            <a href="#gallery">Créations</a>
+          </nav>
+
+          <button class="primary small" type="button">
+            <i class="fa-brands fa-whatsapp"></i> Contact
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <div class="eyebrow">
+                <span class="dot"></span>
+                Génération gratuite de vidéos IA
+              </div>
+              <h1>Créez des vidéos visuellement impressionnantes, en quelques secondes.</h1>
+              <p>
+                Transformez une idée simple en concept vidéo premium : plan, style visuel,
+                ambiance, motion et rendu final, le tout dans un studio inspirant.
+              </p>
+
+              <div class="hero-actions">
+                <button class="primary" id="start-generation" type="button">
+                  <i class="fa-solid fa-play"></i> Générer une vidéo
+                </button>
+                <button class="secondary" type="button">
+                  <i class="fa-solid fa-clapperboard"></i> Voir les modèles
+                </button>
+              </div>
+
+              <div class="mini-stats">
+                <div>
+                  <strong>12K+</strong>
+                  <span>vidéos générées</span>
+                </div>
+                <div>
+                  <strong>4.9/5</strong>
+                  <span>expérience créative</span>
+                </div>
+                <div>
+                  <strong>100%</strong>
+                  <span>gratuit en demo</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="preview-panel">
+              <div class="preview-window">
+                <div class="preview-header">
+                  <span class="pill live">LIVE</span>
+                  <span class="time">00:18</span>
+                </div>
+                <div class="preview-art">
+                  <div class="scene-scroller">
+                    <div class="scene-card glowing">
+                      <span class="scene-label">Concept généré</span>
+                      <h3>Voyage futuriste au coucher du soleil</h3>
+                    </div>
+                    <div class="scene-card alt">
+                      <span class="scene-label">Mood</span>
+                      <h3>cinématique, premium, lumineux</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="studio" class="studio">
+          <div class="container studio-grid">
+            <div class="panel left-panel">
+              <div class="panel-header">
+                <span class="section-tag">Studio de prompt</span>
+                <h2>Concevez votre prochaine vidéo</h2>
+              </div>
+
+              <label class="field-label" for="prompt-input">Description du concept</label>
+              <textarea id="prompt-input" rows="6" placeholder="Exemple : Une scène de voyage dans une ville futuriste au coucher du soleil, plan large, mouvement lent, couleurs dorées, ambiance premium, caméra drone..."></textarea>
+
+              <div class="field-grid">
+                <div>
+                  <label class="field-label" for="style-select">Style visuel</label>
+                  <select id="style-select">
+                    <option value="cinematic">Cinematic</option>
+                    <option value="anime">Animation</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="future">Futuriste</option>
+                    <option value="nature">Nature</option>
+                    <option value="commercial">Commercial</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="field-label" for="duration-select">Durée</label>
+                  <select id="duration-select">
+                    <option value="8s">8 secondes</option>
+                    <option value="15s" selected>15 secondes</option>
+                    <option value="30s">30 secondes</option>
+                    <option value="45s">45 secondes</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field-grid">
+                <div>
+                  <label class="field-label" for="aspect-select">Format</label>
+                  <select id="aspect-select">
+                    <option value="16:9">16:9</option>
+                    <option value="9:16">9:16</option>
+                    <option value="1:1">1:1</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="field-label" for="mood-select">Ambiance</label>
+                  <select id="mood-select">
+                    <option value="premium">Premium</option>
+                    <option value="dreamy">Dreamy</option>
+                    <option value="energetic">Énergique</option>
+                    <option value="calm">Calme</option>
+                    <option value="dramatic">Dramatique</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="prompt-actions">
+                <button class="primary" id="generate-video" type="button">
+                  <i class="fa-solid fa-bolt"></i> Générer la vidéo
+                </button>
+                <button class="ghost" id="use-example" type="button">
+                  <i class="fa-solid fa-star"></i> Utiliser un exemple
+                </button>
+              </div>
+            </div>
+
+            <div class="panel output-panel" id="output-panel">
+              <div class="panel-header">
+                <span class="section-tag alt">Aperçu</span>
+                <h2>Rendu final</h2>
+              </div>
+
+              <div id="loading-state" class="loading-state">
+                <div class="spinner"></div>
+                <p>Génération en cours...</p>
+              </div>
+
+              <div id="result-card" class="result-card hidden">
+                <div class="result-visual" id="result-visual"></div>
+                <div class="result-copy">
+                  <div class="result-meta">
+                    <span class="badge" id="result-style">Cinematic</span>
+                    <span class="badge muted" id="result-duration">15s</span>
+                  </div>
+                  <h3 id="result-title">Concept généré</h3>
+                  <p id="result-description">
+                    Une scène immersive créée selon votre idée.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" class="features">
+          <div class="container">
+            <div class="section-heading">
+              <span class="section-tag">Pourquoi Tall IA</span>
+              <h2>Un espace pensé pour la créativité</h2>
+            </div>
+
+            <div class="feature-grid">
+              <article class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-magic-wand-sparkles"></i></div>
+                <h3>Prompt intelligent</h3>
+                <p>Décrivez votre idée naturellement et transformez-la en storyboard visuel.</p>
+              </article>
+
+              <article class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-sliders"></i></div>
+                <h3>Contrôle créatif</h3>
+                <p>Choisissez le style, l’ambiance, le format et la durée selon le besoin.</p>
+              </article>
+
+              <article class="feature-card">
+                <div class="icon-box"><i class="fa-solid fa-film"></i></div>
+                <h3>Sorties premium</h3>
+                <p>Obtenez un rendu visuel élégant pour les réseaux, le marketing et les démonstrations.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+          <div class="container">
+            <div class="section-heading row-heading">
+              <div>
+                <span class="section-tag">Créations inspirantes</span>
+                <h2>Exemples de concepts</h2>
+              </div>
+              <button class="secondary small" type="button">Voir plus</button>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid">
+              <article class="gallery-item item-1">
+                <div class="overlay">
+                  <span>Futurisme</span>
+                  <h3>Ville lumineuse</h3>
+                </div>
+              </article>
+              <article class="gallery-item item-2">
+                <div class="overlay">
+                  <span>Nature</span>
+                  <h3>Forêt mystique</h3>
+                </div>
+              </article>
+              <article class="gallery-item item-3">
+                <div class="overlay">
+                  <span>Commercial</span>
+                  <h3>Produit premium</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
